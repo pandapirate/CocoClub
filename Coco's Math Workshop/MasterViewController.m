@@ -31,12 +31,31 @@ int total, correct;
     return self;
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    if ([MathSolver instance].toNextLevel) {
+        [MathSolver instance].toNextLevel = NO;
+        [self performSegueWithIdentifier:@"AutoLevelSegue" sender:self];
+    }
+    [MathSolver instance].returnToMain = NO;
+    
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"CurrentPlayerLevel"] == 1) {
+        [StartButton setTitle:@"Start" forState:UIControlStateNormal];
+        [StartButton setTitle:@"Start" forState:UIControlStateSelected];
+    } else {
+        [StartButton setTitle:@"Continue" forState:UIControlStateNormal];
+        [StartButton setTitle:@"Continue" forState:UIControlStateSelected];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     if (![[NSUserDefaults standardUserDefaults] integerForKey:@"CurrentPlayerLevel"]){
-        NSLog(@"First Time Gamer");
         [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"CurrentPlayerLevel"];
     }
     
@@ -57,14 +76,22 @@ int total, correct;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//AutoLevelSegue
+    [[MathSolver instance] playSound];
+    
     if ([[segue identifier] isEqualToString:@"AutoLevelSegue"]) {
         
         QuizPageViewController *dest = [segue destinationViewController] ;
         
         dest.difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"CurrentPlayerLevel"];
-        dest.numOfQuestions = 5;
+        
+        if ([MathSolver instance].retryLevel > 0) {
+            dest.difficulty = [MathSolver instance].retryLevel;
+            [MathSolver instance].retryLevel = -1;
+        }
+        
+        dest.numOfQuestions = 10;
         dest.type = 1;
+        
     } else if ([[segue identifier] isEqualToString:@"CustomLevelSegue"]) {
         [MathSolver instance].returnToMain = NO;
     }

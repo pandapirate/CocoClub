@@ -17,9 +17,9 @@
 NSString * const NOTIF_LoggingOut_Settings = @"goToView2";
 
 @implementation CustomLevelViewController
-@synthesize DifficultyLabel, NumberLabel, operations, multi, divide;
+@synthesize DifficultyLabel, NumberLabel, operations, multi, divide, PlusCross, MinusCross, MultiCross, DivCross;
 int difficulty = 1;
-int questions = 5;
+int questions = 10;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,19 +36,31 @@ int questions = 5;
     }
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    DifficultyLabel.text = @"1";
-    NumberLabel.text = @"5";
+    difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"CurrentPlayerLevel"];
+    
+    DifficultyLabel.text = [NSString stringWithFormat:@"%i", difficulty];
+    NumberLabel.text = @"10";
     [multi setTitle:@"\u00D7" forState:UIControlStateNormal];
     [multi setTitle:@"\u00D7" forState:UIControlStateSelected];
     
     [divide setTitle:@"\u00F7" forState:UIControlStateNormal];
     [divide setTitle:@"\u00F7" forState:UIControlStateSelected];
-    operations = [[NSMutableArray alloc] initWithObjects:@"+", @"-", @"*", @"/", nil];
+    operations = [[NSMutableArray alloc] initWithObjects:@"+", @"-", nil];
+    
+    multi.selected = YES;
+    divide.selected = YES;
+    
+    PlusCross.hidden = YES;
+    MinusCross.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +71,7 @@ int questions = 5;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [[MathSolver instance] playSound];
     if ([[segue identifier] isEqualToString:@"BeginQuizSegue"]) {
         
         QuizPageViewController *dest = [segue destinationViewController] ;
@@ -105,15 +118,19 @@ int questions = 5;
     switch (sender.tag) {
         case 0:
             op = @"+";
+            PlusCross.hidden = sender.selected ? YES : NO;
             break;
         case 1:
             op = @"-";
+            MinusCross.hidden = sender.selected ? YES : NO;
             break;
         case 2:
             op = @"*";
+            MultiCross.hidden = sender.selected ? YES : NO;
             break;
         case 3:
             op = @"/";
+            DivCross.hidden = sender.selected ? YES : NO;
             break;
         default:
             break;
@@ -129,6 +146,7 @@ int questions = 5;
 }
 
 - (IBAction)GoBack:(UIButton *)sender {
+    [[MathSolver instance] playSound];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

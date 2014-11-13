@@ -10,6 +10,7 @@
 
 @interface HistoryRecordViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *HistoryRecordView;
+
 - (IBAction)BackButton:(UIButton *)sender;
 @property (nonatomic, strong) NSMutableArray *historyList;
 

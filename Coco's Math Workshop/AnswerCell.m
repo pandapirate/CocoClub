@@ -9,7 +9,7 @@
 #import "AnswerCell.h"
 
 @implementation AnswerCell
-@synthesize question, QuestionLabel, AnswerLabel, CorrectLabel;
+@synthesize question, QuestionLabel, AnswerLabel, CorrectLabel, TimeLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -28,8 +28,6 @@
 }
 
 - (void) setLabels {
-    NSLog(@"Setting Values");
-    
     double value = [question.userans doubleValue];
     double sol = [question.answer doubleValue];
     
@@ -45,7 +43,16 @@
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     [f setMaximumFractionDigits:2];
     
-    QuestionLabel.text = [NSString stringWithFormat:@"%@ = %@", question.equation, [f stringFromNumber:question.answer]];
+    NSString *formattedEq = [[MathSolver instance] formatEquation:question.equation];
+    
+    QuestionLabel.text = [NSString stringWithFormat:@"%@. %@ = %@", question.number, formattedEq, [f stringFromNumber:question.answer]];
     AnswerLabel.text = [NSString stringWithFormat:@"%@", [f stringFromNumber:question.userans]];
+    
+    int seconds = [question.time intValue];
+    int hour = seconds/3600;
+    int minute = (seconds - 3600 * hour)/60;
+    int second = (seconds - 3600 * hour - minute * 60);
+    
+    TimeLabel.text = [NSString stringWithFormat:@"%02i:%02i", minute, second];
 }
 @end

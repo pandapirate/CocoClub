@@ -1,8 +1,8 @@
 //
 //  Question.h
-//  Coco's Math Workshop
+//  Coco's Class
 //
-//  Created by Kevin Huang on 10/5/13.
+//  Created by Kevin Huang on 10/12/13.
 //  Copyright (c) 2013 The Company. All rights reserved.
 //
 
@@ -14,7 +14,9 @@
 
 @property (nonatomic, retain) NSNumber * answer;
 @property (nonatomic, retain) NSNumber * correct;
-@property (nonatomic, retain) NSNumber * userans;
 @property (nonatomic, retain) NSString * equation;
+@property (nonatomic, retain) NSNumber * number;
+@property (nonatomic, retain) NSNumber * userans;
+@property (nonatomic, retain) NSNumber * time;
 
 @end

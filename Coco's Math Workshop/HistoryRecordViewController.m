@@ -26,11 +26,16 @@
     return self;
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     HistoryRecordView.delegate = self;
+    HistoryRecordView.backgroundColor = [UIColor clearColor];
     [self loadHistory];
 	// Do any additional setup after loading the view.
 }
@@ -59,12 +64,17 @@
     cell.quiz = [historyList objectAtIndex:indexPath.row];
     [cell setValues];
     
+    UIView *blank = [[UIView alloc] init];
+    blank.backgroundColor = [UIColor clearColor];
+    cell.selectedBackgroundView = blank;
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Row selected: %i", indexPath.row);
+//    NSLog(@"Row selected: %i", indexPath.row);
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -96,6 +106,8 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    [[MathSolver instance] playSound];
     if ([[segue identifier] isEqualToString:@"ViewQuizResultSegue"]) {
         
         ResultViewController *dest = [segue destinationViewController] ;
@@ -106,6 +118,7 @@
 }
 
 - (IBAction)BackButton:(UIButton *)sender {
+    [[MathSolver instance] playSound];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

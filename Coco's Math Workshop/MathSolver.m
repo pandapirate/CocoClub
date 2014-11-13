@@ -9,7 +9,7 @@
 #import "MathSolver.h"
 
 @implementation MathSolver
-@synthesize returnToMain;
+@synthesize returnToMain, toNextLevel, player, retryLevel;
 static MathSolver *instance;
 
 + (MathSolver *) instance {
@@ -152,50 +152,49 @@ static MathSolver *instance;
 }
 
 - (NSString *) newEquationforLevel:(int)level andOperations: (NSMutableArray *) operations andType: (int) type{
-    int low = 0, high = 0;
+    int low = 1, high = 5;
     int ops = 1;
     if (type == 1) {
         if (level <= 10) {
-            low = low + (level-1) * 2;
-            high = high + (level-1) * 10;
+            low = low + level * 1;
+            high = high + level * 3;
         } else if (level <= 20) {
-            ops = 2;
-            low = low + (level-10) * 2;
-            high = high + (level-10) * 10;
+            low = low + (level-10) * 1;
+            high = high + (level-10) * 3;
         } else if (level <= 30) {
-            ops = 3;
             low = low + (level-20) * 1;
-            high = high + (level-20) * 5;
+            high = high + (level-20) * 3;
         } else if (level <= 40) {
-            ops = 4;
             low = low + (level-30) * 1;
-            high = high + (level-30) * 5;
-        } else if (level <= 50) {
-            ops = 5;
+            high = high + (level-30) * 3;
+        } else if (level > 40) {
+            ops += level / 20;
             low = low + (level-40) * 1;
-            high = high + (level-40) * 5;
-        } else if (level > 50) {
-            ops = 6;
-            low = low + (level-60) * 2;
-            high = high + (level-60) * 10;
-            low = MIN(30, low);
-            high = MAX(100, high);
+            high = high + (level-40) * 3;
         }
     } else if (type == 2) {
         low = level * 1;
-        high = high + level * 5;
+        high = high + level * 2;
+        ops += level / 20;
     }
     
+    ops = MIN(4, ops);
+    low = MIN(30, low);
+    high = MIN(99, high);
+    
     int num = (arc4random() % (high - low)) + low;
-    ops = arc4random() % ops + 1;
     
     NSString *retVal = [NSString stringWithFormat:@"%i", num];
+    
     for (int i = 0; i < ops; i++) {
         int n = arc4random() % operations.count;
         NSString *op = [operations objectAtIndex:n];
         
-        if ([op isEqualToString:@"^"]) {
-            num = (arc4random() % 3) + 1;
+        if ([op isEqualToString:@"/"]) {
+            int val = [self calculateNumerator:retVal];
+            NSMutableArray *divisible = [self calculatePrimeFactor:val];
+            n = arc4random() % divisible.count;
+            num = [[divisible objectAtIndex:n] intValue];
         } else {
             num = (arc4random() % (high - low)) + low;
         }
@@ -207,22 +206,22 @@ static MathSolver *instance;
 }
 
 - (NSMutableArray *) getOpsForLevel: (int) level {
-    NSMutableArray *operations = [[NSMutableArray alloc] init];
+    NSMutableArray *operations;
     
-    if (level >= 1)
-        [operations addObject:[NSString stringWithFormat:@"+"]];
+    if (level < 11)
+        operations = [[NSMutableArray alloc] initWithObjects:@"+", nil];
     
-    if (level >= 6)
-        [operations addObject:[NSString stringWithFormat:@"-"]];
+    else if (level < 21)
+        operations = [[NSMutableArray alloc] initWithObjects:@"-", nil];
 
-    if (level >= 11)
-        [operations addObject:[NSString stringWithFormat:@"*"]];
+    else if (level < 31)
+        operations = [[NSMutableArray alloc] initWithObjects:@"*", nil];
     
-    if (level >= 16)
-        [operations addObject:[NSString stringWithFormat:@"/"]];
+    else if (level < 41)
+        operations = [[NSMutableArray alloc] initWithObjects:@"/", nil];
     
-//    if (level >= 21)
-//        [operations addObject:[NSString stringWithFormat:@"^"]];
+    else
+        operations = [[NSMutableArray alloc] initWithObjects:@"+", @"-", @"*", @"/", nil];
     
     return operations;
 }
@@ -254,6 +253,58 @@ static MathSolver *instance;
     }
     
     return result;
+}
+
+- (int) calculateNumerator: (NSString *) eq {
+    NSString *newEQ = @"";
+    for (int i = eq.length-1; i >= 0; i--) {
+        if ([eq characterAtIndex:i] == '+' || [eq characterAtIndex:i] == '-') {
+            newEQ = [eq substringWithRange:NSMakeRange(i+1, eq.length-i-1)];
+            break;
+        }
+    }
+    if ([newEQ isEqualToString:@""]) {
+        newEQ = eq;
+    }
+    
+    return [self solve:newEQ];
+}
+
+- (NSMutableArray *) calculatePrimeFactor: (int) number {
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    
+    int i = 2;
+    int start = number;
+    while (start > 1) {
+        if (start % i == 0) {
+            NSNumber *num = [NSNumber numberWithInt:i];
+            if (![list containsObject:num]) {
+                [list addObject:num];
+            }
+            start = start/i;
+            
+            num = [NSNumber numberWithInt:start];
+            if (![list containsObject:num]) {
+                [list addObject:num];
+            }
+        } else {
+            i++;
+        }
+    }
+    
+    [list removeObject:[NSNumber numberWithInt:1]];
+    
+    if (list.count == 0)
+        [list addObject:[NSNumber numberWithInt:number]];
+    
+    return list;
+}
+
+- (void) playSound {
+    int i = arc4random() % 10;
+    NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%i", i] ofType:@"m4a"]];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+    [player play];
 }
 
 @end

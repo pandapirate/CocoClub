@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66190BB017F20E5F00FE73F5 /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66190BAF17F20E5F00FE73F5 /* DrawingViewController.m */; };
+		66190BB217F218BC00FE73F5 /* green-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66190BB117F218BC00FE73F5 /* green-bg.jpg */; };
+		66190BB717F2340B00FE73F5 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 66190BB617F2340B00FE73F5 /* transparent.png */; };
+		6663D2CD180CFDD600A32725 /* white-square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6663D2CC180CFDD600A32725 /* white-square.png */; };
+		666EEFA617EE5D00007BEF34 /* CustomLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666EEFA517EE5D00007BEF34 /* CustomLevelViewController.m */; };
+		666EEFAC17EE9B89007BEF34 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 666EEFAB17EE9B88007BEF34 /* HistoryCell.m */; };
+		668F20E218051B220059C88E /* coco-512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 668F20E118051B220059C88E /* coco-512x512.png */; };
+		66A97D7C17E2C7B700505286 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A97D7B17E2C7B700505286 /* UIKit.framework */; };
+		66A97D7E17E2C7B700505286 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A97D7D17E2C7B700505286 /* Foundation.framework */; };
+		66A97D8017E2C7B700505286 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A97D7F17E2C7B700505286 /* CoreGraphics.framework */; };
+		66A97D8217E2C7B700505286 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A97D8117E2C7B700505286 /* CoreData.framework */; };
+		66A97D8817E2C7B700505286 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66A97D8617E2C7B700505286 /* InfoPlist.strings */; };
+		66A97D8A17E2C7B700505286 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A97D8917E2C7B700505286 /* main.m */; };
+		66A97D8E17E2C7B700505286 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A97D8D17E2C7B700505286 /* AppDelegate.m */; };
+		66A97D9017E2C7B700505286 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A97D8F17E2C7B700505286 /* Default.png */; };
+		66A97D9217E2C7B700505286 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A97D9117E2C7B700505286 /* Default@2x.png */; };
+		66A97D9417E2C7B700505286 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A97D9317E2C7B700505286 /* Default-568h@2x.png */; };
+		66A97D9717E2C7B700505286 /* IPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A97D9517E2C7B700505286 /* IPadStoryboard.storyboard */; };
+		66A97D9A17E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66A97D9817E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodeld */; };
+		66A97DAB17E2CDDF00505286 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A97DAA17E2CDDF00505286 /* MasterViewController.m */; };
+		66A97DEF17E4170B00505286 /* MathSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A97DEE17E4170B00505286 /* MathSolver.m */; };
+		66A97DF217E62B6400505286 /* QuizPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A97DF117E62B6400505286 /* QuizPageViewController.m */; };
+		66A97DF417E6665100505286 /* IPhone5Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A97DF317E6665100505286 /* IPhone5Storyboard.storyboard */; };
+		66AF73EB18047BAE008DEFC8 /* QuizResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF73EA18047BAE008DEFC8 /* QuizResultViewController.m */; };
+		66AF73ED1804A9EA008DEFC8 /* no-sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 66AF73EC1804A9EA008DEFC8 /* no-sign.png */; };
+		66DB07791814778E00150965 /* coco-icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07721814778E00150965 /* coco-icon-57x57.png */; };
+		66DB077A1814778E00150965 /* coco-icon-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07731814778E00150965 /* coco-icon-72x72.png */; };
+		66DB077B1814778E00150965 /* coco-icon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07741814778E00150965 /* coco-icon-76x76.png */; };
+		66DB077C1814778E00150965 /* coco-icon-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07751814778E00150965 /* coco-icon-114x114.png */; };
+		66DB077D1814778E00150965 /* coco-icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07761814778E00150965 /* coco-icon-120x120.png */; };
+		66DB077E1814778E00150965 /* coco-icon-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07771814778E00150965 /* coco-icon-144x144.png */; };
+		66DB077F1814778E00150965 /* coco-icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07781814778E00150965 /* coco-icon-152x152.png */; };
+		66DB0781181477EB00150965 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66DB0780181477EB00150965 /* Images.xcassets */; };
+		66DB07831814866000150965 /* white-rect.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DB07821814866000150965 /* white-rect.png */; };
+		66F35BA2180A24420013A374 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F35BA1180A24420013A374 /* Question.m */; };
+		66F35BAD180B49630013A374 /* 0.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BA3180B49630013A374 /* 0.m4a */; };
+		66F35BAE180B49630013A374 /* 1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BA4180B49630013A374 /* 1.m4a */; };
+		66F35BAF180B49630013A374 /* 2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BA5180B49630013A374 /* 2.m4a */; };
+		66F35BB0180B49630013A374 /* 3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BA6180B49630013A374 /* 3.m4a */; };
+		66F35BB1180B49630013A374 /* 4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BA7180B49630013A374 /* 4.m4a */; };
+		66F35BB2180B49630013A374 /* 5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BA8180B49630013A374 /* 5.m4a */; };
+		66F35BB3180B49630013A374 /* 6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BA9180B49630013A374 /* 6.m4a */; };
+		66F35BB4180B49630013A374 /* 7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BAA180B49630013A374 /* 7.m4a */; };
+		66F35BB5180B49630013A374 /* 8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BAB180B49630013A374 /* 8.m4a */; };
+		66F35BB6180B49630013A374 /* 9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66F35BAC180B49630013A374 /* 9.m4a */; };
+		66F35BB8180B4B270013A374 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F35BB7180B4B270013A374 /* AVFoundation.framework */; };
+		66F35BBA180B4BA80013A374 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F35BB9180B4BA80013A374 /* AudioToolbox.framework */; };
+		66F35BC3180B5AA50013A374 /* LevelSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F35BC2180B5AA50013A374 /* LevelSelectViewController.m */; };
+		66F386D717FB885300831641 /* HistoryRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F386D617FB885300831641 /* HistoryRecordViewController.m */; };
+		66F386DA17FB995300831641 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F386D917FB995300831641 /* ResultViewController.m */; };
+		66F386DD18009AD000831641 /* AnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F386DC18009AD000831641 /* AnswerCell.m */; };
+		66F386E318009DCD00831641 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F386E218009DCD00831641 /* Quiz.m */; };
+		66F386E51800BD9A00831641 /* IPhone4Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F386E41800BD9A00831641 /* IPhone4Storyboard.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		66190BAE17F20E5F00FE73F5 /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
+		66190BAF17F20E5F00FE73F5 /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
+		66190BB117F218BC00FE73F5 /* green-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "green-bg.jpg"; sourceTree = "<group>"; };
+		66190BB617F2340B00FE73F5 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
+		6663D2CC180CFDD600A32725 /* white-square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-square.png"; sourceTree = "<group>"; };
+		666EEFA417EE5D00007BEF34 /* CustomLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLevelViewController.h; sourceTree = "<group>"; };
+		666EEFA517EE5D00007BEF34 /* CustomLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLevelViewController.m; sourceTree = "<group>"; };
+		666EEFAA17EE9B88007BEF34 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
+		666EEFAB17EE9B88007BEF34 /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCell.m; sourceTree = "<group>"; };
+		668F20E118051B220059C88E /* coco-512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-512x512.png"; sourceTree = "<group>"; };
+		66A97D7817E2C7B700505286 /* Coco's Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coco's Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66A97D7B17E2C7B700505286 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		66A97D7D17E2C7B700505286 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		66A97D7F17E2C7B700505286 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		66A97D8117E2C7B700505286 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		66A97D8517E2C7B700505286 /* Coco's Club-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coco's Club-Info.plist"; sourceTree = "<group>"; };
+		66A97D8717E2C7B700505286 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		66A97D8917E2C7B700505286 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		66A97D8B17E2C7B700505286 /* Coco's Club-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coco's Club-Prefix.pch"; sourceTree = "<group>"; };
+		66A97D8C17E2C7B700505286 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		66A97D8D17E2C7B700505286 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		66A97D8F17E2C7B700505286 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		66A97D9117E2C7B700505286 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		66A97D9317E2C7B700505286 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		66A97D9617E2C7B700505286 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/IPadStoryboard.storyboard; sourceTree = "<group>"; };
+		66A97D9917E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Coco_s_Math_Workshop.xcdatamodel; sourceTree = "<group>"; };
+		66A97DA917E2CDDF00505286 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		66A97DAA17E2CDDF00505286 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		66A97DED17E4170B00505286 /* MathSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathSolver.h; sourceTree = "<group>"; };
+		66A97DEE17E4170B00505286 /* MathSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathSolver.m; sourceTree = "<group>"; };
+		66A97DF017E62B6400505286 /* QuizPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizPageViewController.h; sourceTree = "<group>"; };
+		66A97DF117E62B6400505286 /* QuizPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizPageViewController.m; sourceTree = "<group>"; };
+		66A97DF317E6665100505286 /* IPhone5Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IPhone5Storyboard.storyboard; sourceTree = "<group>"; };
+		66AF73E918047BAE008DEFC8 /* QuizResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizResultViewController.h; sourceTree = "<group>"; };
+		66AF73EA18047BAE008DEFC8 /* QuizResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizResultViewController.m; sourceTree = "<group>"; };
+		66AF73EC1804A9EA008DEFC8 /* no-sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-sign.png"; sourceTree = "<group>"; };
+		66DB07721814778E00150965 /* coco-icon-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-icon-57x57.png"; sourceTree = "<group>"; };
+		66DB07731814778E00150965 /* coco-icon-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-icon-72x72.png"; sourceTree = "<group>"; };
+		66DB07741814778E00150965 /* coco-icon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-icon-76x76.png"; sourceTree = "<group>"; };
+		66DB07751814778E00150965 /* coco-icon-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-icon-114x114.png"; sourceTree = "<group>"; };
+		66DB07761814778E00150965 /* coco-icon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-icon-120x120.png"; sourceTree = "<group>"; };
+		66DB07771814778E00150965 /* coco-icon-144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-icon-144x144.png"; sourceTree = "<group>"; };
+		66DB07781814778E00150965 /* coco-icon-152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coco-icon-152x152.png"; sourceTree = "<group>"; };
+		66DB0780181477EB00150965 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Coco's Club/Images.xcassets"; sourceTree = "<group>"; };
+		66DB07821814866000150965 /* white-rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-rect.png"; sourceTree = "<group>"; };
+		66F35BA0180A24420013A374 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		66F35BA1180A24420013A374 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		66F35BA3180B49630013A374 /* 0.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0.m4a; sourceTree = "<group>"; };
+		66F35BA4180B49630013A374 /* 1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.m4a; sourceTree = "<group>"; };
+		66F35BA5180B49630013A374 /* 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.m4a; sourceTree = "<group>"; };
+		66F35BA6180B49630013A374 /* 3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.m4a; sourceTree = "<group>"; };
+		66F35BA7180B49630013A374 /* 4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.m4a; sourceTree = "<group>"; };
+		66F35BA8180B49630013A374 /* 5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.m4a; sourceTree = "<group>"; };
+		66F35BA9180B49630013A374 /* 6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.m4a; sourceTree = "<group>"; };
+		66F35BAA180B49630013A374 /* 7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.m4a; sourceTree = "<group>"; };
+		66F35BAB180B49630013A374 /* 8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.m4a; sourceTree = "<group>"; };
+		66F35BAC180B49630013A374 /* 9.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9.m4a; sourceTree = "<group>"; };
+		66F35BB7180B4B270013A374 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		66F35BB9180B4BA80013A374 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		66F35BC1180B5AA50013A374 /* LevelSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectViewController.h; sourceTree = "<group>"; };
+		66F35BC2180B5AA50013A374 /* LevelSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectViewController.m; sourceTree = "<group>"; };
+		66F386D517FB885300831641 /* HistoryRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryRecordViewController.h; sourceTree = "<group>"; };
+		66F386D617FB885300831641 /* HistoryRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryRecordViewController.m; sourceTree = "<group>"; };
+		66F386D817FB995300831641 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		66F386D917FB995300831641 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		66F386DB18009AD000831641 /* AnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCell.h; sourceTree = "<group>"; };
+		66F386DC18009AD000831641 /* AnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCell.m; sourceTree = "<group>"; };
+		66F386E118009DCD00831641 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
+		66F386E218009DCD00831641 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
+		66F386E41800BD9A00831641 /* IPhone4Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IPhone4Storyboard.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66A97D7517E2C7B700505286 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F35BBA180B4BA80013A374 /* AudioToolbox.framework in Frameworks */,
+				66F35BB8180B4B270013A374 /* AVFoundation.framework in Frameworks */,
+				66A97D7C17E2C7B700505286 /* UIKit.framework in Frameworks */,
+				66A97D7E17E2C7B700505286 /* Foundation.framework in Frameworks */,
+				66A97D8017E2C7B700505286 /* CoreGraphics.framework in Frameworks */,
+				66A97D8217E2C7B700505286 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66190BB317F218C300FE73F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66DB07821814866000150965 /* white-rect.png */,
+				6663D2CC180CFDD600A32725 /* white-square.png */,
+				66F35BA3180B49630013A374 /* 0.m4a */,
+				66F35BA4180B49630013A374 /* 1.m4a */,
+				66F35BA5180B49630013A374 /* 2.m4a */,
+				66F35BA6180B49630013A374 /* 3.m4a */,
+				66F35BA7180B49630013A374 /* 4.m4a */,
+				66F35BA8180B49630013A374 /* 5.m4a */,
+				66F35BA9180B49630013A374 /* 6.m4a */,
+				66F35BAA180B49630013A374 /* 7.m4a */,
+				66F35BAB180B49630013A374 /* 8.m4a */,
+				66F35BAC180B49630013A374 /* 9.m4a */,
+				66AF73EC1804A9EA008DEFC8 /* no-sign.png */,
+				668F20E118051B220059C88E /* coco-512x512.png */,
+				66190BB617F2340B00FE73F5 /* transparent.png */,
+				66190BB117F218BC00FE73F5 /* green-bg.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		66A97D6F17E2C7B700505286 = {
+			isa = PBXGroup;
+			children = (
+				66DB0780181477EB00150965 /* Images.xcassets */,
+				66DB07721814778E00150965 /* coco-icon-57x57.png */,
+				66DB07731814778E00150965 /* coco-icon-72x72.png */,
+				66DB07741814778E00150965 /* coco-icon-76x76.png */,
+				66DB07751814778E00150965 /* coco-icon-114x114.png */,
+				66DB07761814778E00150965 /* coco-icon-120x120.png */,
+				66DB07771814778E00150965 /* coco-icon-144x144.png */,
+				66DB07781814778E00150965 /* coco-icon-152x152.png */,
+				66A97D8317E2C7B700505286 /* Coco's Math Workshop */,
+				66A97D7A17E2C7B700505286 /* Frameworks */,
+				66A97D7917E2C7B700505286 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66A97D7917E2C7B700505286 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66A97D7817E2C7B700505286 /* Coco's Club.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66A97D7A17E2C7B700505286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66F35BB9180B4BA80013A374 /* AudioToolbox.framework */,
+				66F35BB7180B4B270013A374 /* AVFoundation.framework */,
+				66A97D7B17E2C7B700505286 /* UIKit.framework */,
+				66A97D7D17E2C7B700505286 /* Foundation.framework */,
+				66A97D7F17E2C7B700505286 /* CoreGraphics.framework */,
+				66A97D8117E2C7B700505286 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66A97D8317E2C7B700505286 /* Coco's Math Workshop */ = {
+			isa = PBXGroup;
+			children = (
+				66190BB317F218C300FE73F5 /* Resources */,
+				66A97DEC17E2D03200505286 /* Entity */,
+				66A97D8C17E2C7B700505286 /* AppDelegate.h */,
+				66A97D8D17E2C7B700505286 /* AppDelegate.m */,
+				66A97D9517E2C7B700505286 /* IPadStoryboard.storyboard */,
+				66A97DF317E6665100505286 /* IPhone5Storyboard.storyboard */,
+				66F386E41800BD9A00831641 /* IPhone4Storyboard.storyboard */,
+				66A97D9817E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodeld */,
+				66A97D8417E2C7B700505286 /* Supporting Files */,
+				66A97DED17E4170B00505286 /* MathSolver.h */,
+				66A97DEE17E4170B00505286 /* MathSolver.m */,
+				66A97DA917E2CDDF00505286 /* MasterViewController.h */,
+				66A97DAA17E2CDDF00505286 /* MasterViewController.m */,
+				666EEFA417EE5D00007BEF34 /* CustomLevelViewController.h */,
+				666EEFA517EE5D00007BEF34 /* CustomLevelViewController.m */,
+				66A97DF017E62B6400505286 /* QuizPageViewController.h */,
+				66A97DF117E62B6400505286 /* QuizPageViewController.m */,
+				66F386D517FB885300831641 /* HistoryRecordViewController.h */,
+				66F386D617FB885300831641 /* HistoryRecordViewController.m */,
+				666EEFAA17EE9B88007BEF34 /* HistoryCell.h */,
+				666EEFAB17EE9B88007BEF34 /* HistoryCell.m */,
+				66190BAE17F20E5F00FE73F5 /* DrawingViewController.h */,
+				66190BAF17F20E5F00FE73F5 /* DrawingViewController.m */,
+				66F386D817FB995300831641 /* ResultViewController.h */,
+				66F386D917FB995300831641 /* ResultViewController.m */,
+				66F386DB18009AD000831641 /* AnswerCell.h */,
+				66F386DC18009AD000831641 /* AnswerCell.m */,
+				66AF73E918047BAE008DEFC8 /* QuizResultViewController.h */,
+				66AF73EA18047BAE008DEFC8 /* QuizResultViewController.m */,
+				66F35BC1180B5AA50013A374 /* LevelSelectViewController.h */,
+				66F35BC2180B5AA50013A374 /* LevelSelectViewController.m */,
+			);
+			path = "Coco's Math Workshop";
+			sourceTree = "<group>";
+		};
+		66A97D8417E2C7B700505286 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66A97D8517E2C7B700505286 /* Coco's Club-Info.plist */,
+				66A97D8617E2C7B700505286 /* InfoPlist.strings */,
+				66A97D8917E2C7B700505286 /* main.m */,
+				66A97D8B17E2C7B700505286 /* Coco's Club-Prefix.pch */,
+				66A97D8F17E2C7B700505286 /* Default.png */,
+				66A97D9117E2C7B700505286 /* Default@2x.png */,
+				66A97D9317E2C7B700505286 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66A97DEC17E2D03200505286 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				66F386E118009DCD00831641 /* Quiz.h */,
+				66F386E218009DCD00831641 /* Quiz.m */,
+				66F35BA0180A24420013A374 /* Question.h */,
+				66F35BA1180A24420013A374 /* Question.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66A97D7717E2C7B700505286 /* Coco's Club */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66A97DA317E2C7B700505286 /* Build configuration list for PBXNativeTarget "Coco's Club" */;
+			buildPhases = (
+				66A97D7417E2C7B700505286 /* Sources */,
+				66A97D7517E2C7B700505286 /* Frameworks */,
+				66A97D7617E2C7B700505286 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Coco's Club";
+			productName = "Coco's Math Workshop";
+			productReference = 66A97D7817E2C7B700505286 /* Coco's Club.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66A97D7017E2C7B700505286 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "The Company";
+				TargetAttributes = {
+					66A97D7717E2C7B700505286 = {
+						DevelopmentTeam = HWW2AB7CB9;
+					};
+				};
+			};
+			buildConfigurationList = 66A97D7317E2C7B700505286 /* Build configuration list for PBXProject "Coco's Club" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 66A97D6F17E2C7B700505286;
+			productRefGroup = 66A97D7917E2C7B700505286 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66A97D7717E2C7B700505286 /* Coco's Club */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66A97D7617E2C7B700505286 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F35BB2180B49630013A374 /* 5.m4a in Resources */,
+				66F35BB3180B49630013A374 /* 6.m4a in Resources */,
+				66F35BAF180B49630013A374 /* 2.m4a in Resources */,
+				66A97D8817E2C7B700505286 /* InfoPlist.strings in Resources */,
+				66DB077B1814778E00150965 /* coco-icon-76x76.png in Resources */,
+				66A97D9017E2C7B700505286 /* Default.png in Resources */,
+				66190BB217F218BC00FE73F5 /* green-bg.jpg in Resources */,
+				66A97D9217E2C7B700505286 /* Default@2x.png in Resources */,
+				66F35BAE180B49630013A374 /* 1.m4a in Resources */,
+				66DB077E1814778E00150965 /* coco-icon-144x144.png in Resources */,
+				66DB07831814866000150965 /* white-rect.png in Resources */,
+				66F35BB0180B49630013A374 /* 3.m4a in Resources */,
+				66DB07791814778E00150965 /* coco-icon-57x57.png in Resources */,
+				6663D2CD180CFDD600A32725 /* white-square.png in Resources */,
+				66190BB717F2340B00FE73F5 /* transparent.png in Resources */,
+				66F35BB4180B49630013A374 /* 7.m4a in Resources */,
+				66F35BB5180B49630013A374 /* 8.m4a in Resources */,
+				66A97D9417E2C7B700505286 /* Default-568h@2x.png in Resources */,
+				66DB077D1814778E00150965 /* coco-icon-120x120.png in Resources */,
+				66DB077A1814778E00150965 /* coco-icon-72x72.png in Resources */,
+				66F35BB6180B49630013A374 /* 9.m4a in Resources */,
+				66F386E51800BD9A00831641 /* IPhone4Storyboard.storyboard in Resources */,
+				66DB0781181477EB00150965 /* Images.xcassets in Resources */,
+				66A97D9717E2C7B700505286 /* IPadStoryboard.storyboard in Resources */,
+				66F35BB1180B49630013A374 /* 4.m4a in Resources */,
+				66AF73ED1804A9EA008DEFC8 /* no-sign.png in Resources */,
+				66DB077F1814778E00150965 /* coco-icon-152x152.png in Resources */,
+				668F20E218051B220059C88E /* coco-512x512.png in Resources */,
+				66DB077C1814778E00150965 /* coco-icon-114x114.png in Resources */,
+				66A97DF417E6665100505286 /* IPhone5Storyboard.storyboard in Resources */,
+				66F35BAD180B49630013A374 /* 0.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66A97D7417E2C7B700505286 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66A97D8A17E2C7B700505286 /* main.m in Sources */,
+				66A97D8E17E2C7B700505286 /* AppDelegate.m in Sources */,
+				66A97D9A17E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodeld in Sources */,
+				66A97DAB17E2CDDF00505286 /* MasterViewController.m in Sources */,
+				66F386D717FB885300831641 /* HistoryRecordViewController.m in Sources */,
+				66F386E318009DCD00831641 /* Quiz.m in Sources */,
+				66190BB017F20E5F00FE73F5 /* DrawingViewController.m in Sources */,
+				66F386DD18009AD000831641 /* AnswerCell.m in Sources */,
+				66A97DEF17E4170B00505286 /* MathSolver.m in Sources */,
+				66AF73EB18047BAE008DEFC8 /* QuizResultViewController.m in Sources */,
+				66A97DF217E62B6400505286 /* QuizPageViewController.m in Sources */,
+				666EEFA617EE5D00007BEF34 /* CustomLevelViewController.m in Sources */,
+				66F35BA2180A24420013A374 /* Question.m in Sources */,
+				66F35BC3180B5AA50013A374 /* LevelSelectViewController.m in Sources */,
+				666EEFAC17EE9B89007BEF34 /* HistoryCell.m in Sources */,
+				66F386DA17FB995300831641 /* ResultViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		66A97D8617E2C7B700505286 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66A97D8717E2C7B700505286 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		66A97D9517E2C7B700505286 /* IPadStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66A97D9617E2C7B700505286 /* en */,
+			);
+			name = IPadStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66A97DA117E2C7B700505286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		66A97DA217E2C7B700505286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66A97DA417E2C7B700505286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kevin Huang (7E2K9A5E26)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kevin Huang (7E2K9A5E26)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Coco's Math Workshop/Coco's Club-Prefix.pch";
+				INFOPLIST_FILE = "Coco's Math Workshop/Coco's Club-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/khuang/Documents/AppDesign/Coco's\\ Math\\ Workshop/Coco's\\ Math\\ Workshop/lib",
+				);
+				PRODUCT_NAME = "Coco's Club";
+				PROVISIONING_PROFILE = "926A414C-67FF-4C1B-BB82-B8A5EE52B68C";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		66A97DA517E2C7B700505286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chuan Huang";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chuan Huang";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Coco's Math Workshop/Coco's Club-Prefix.pch";
+				INFOPLIST_FILE = "Coco's Math Workshop/Coco's Club-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/khuang/Documents/AppDesign/Coco's\\ Math\\ Workshop/Coco's\\ Math\\ Workshop/lib",
+				);
+				PRODUCT_NAME = "Coco's Club";
+				PROVISIONING_PROFILE = "01699472-47ED-4213-936A-DD36B4E29925";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66A97D7317E2C7B700505286 /* Build configuration list for PBXProject "Coco's Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66A97DA117E2C7B700505286 /* Debug */,
+				66A97DA217E2C7B700505286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66A97DA317E2C7B700505286 /* Build configuration list for PBXNativeTarget "Coco's Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66A97DA417E2C7B700505286 /* Debug */,
+				66A97DA517E2C7B700505286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		66A97D9817E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				66A97D9917E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodel */,
+			);
+			currentVersion = 66A97D9917E2C7B700505286 /* Coco_s_Math_Workshop.xcdatamodel */;
+			path = Coco_s_Math_Workshop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 66A97D7017E2C7B700505286 /* Project object */;
+}

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *QuestionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *AnswerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *CorrectLabel;
+@property (strong, nonatomic) IBOutlet UILabel *TimeLabel;
 
 - (void) setLabels;
 @end

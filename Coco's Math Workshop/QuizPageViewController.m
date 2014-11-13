@@ -10,17 +10,18 @@
 #import "MathSolver.h"
 #import "MasterViewController.h"
 #import "DrawingViewController.h"
+#import "QuizResultViewController.h"
 
 @interface QuizPageViewController ()
 
 @end
 
 @implementation QuizPageViewController
-@synthesize Equation, Solution, difficulty, numOfQuestions, type, Level, QuestionCount, operations, EnterButton, FloatWarning;
+@synthesize Equation, Solution, difficulty, numOfQuestions, type, Level, QuestionCount, operations, EnterButton, TimeLabel, timer;
 
 Question *question;
 Quiz *quiz;
-int total, correct;
+int total, correct, seconds, pastTime;
 NSManagedObjectContext  *context;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +40,16 @@ NSManagedObjectContext  *context;
     numOfQuestions = number;
     
     return self;
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    if ([MathSolver instance].returnToMain) {
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 - (void)viewDidLoad
@@ -60,9 +71,14 @@ NSManagedObjectContext  *context;
 
     [EnterButton setTitle:@"\u21B5" forState:UIControlStateNormal];
     [EnterButton setTitle:@"\u21B5" forState:UIControlStateSelected];
-    FloatWarning.hidden = YES;
-    
+
+    TimeLabel.text = @"00:00";
+
     [self newEquation];
+
+    seconds = 0;
+    pastTime = -1;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeCount) userInfo:nil repeats:YES];
 
 }
 
@@ -74,6 +90,8 @@ NSManagedObjectContext  *context;
 
 
 - (IBAction)EnterNumber:(UIButton *)sender {
+    [[MathSolver instance] playSound];
+    
     if (sender.tag == 11) {
         Solution.text = [NSString stringWithFormat:@"%@-", Solution.text];
     } else if (sender.tag == 12) {
@@ -86,11 +104,20 @@ NSManagedObjectContext  *context;
 }
 
 - (IBAction)VerifyAnswer:(UIButton *)sender {
+    [[MathSolver instance] playSound];
+    
     double value = [Solution.text doubleValue];
     double sol = [question.answer doubleValue];
     
     question.userans = [NSNumber numberWithDouble:value];
- 
+    
+    if (pastTime == -1) {
+        question.time = [NSNumber numberWithInt:seconds];
+    } else {
+        question.time = [NSNumber numberWithInt:seconds - pastTime];
+    }
+    pastTime = seconds;
+    
     // check answer
     if (fabs(value - sol) <= 0.01) {
         correct++;
@@ -125,67 +152,71 @@ NSManagedObjectContext  *context;
     
     [Equation setText:formatedEQ];
     
-    context = [AppDelegate sharedAppDelegate].managedObjectContext;
-
     question = [NSEntityDescription insertNewObjectForEntityForName:@"Question" inManagedObjectContext:context];
     
     question.equation = eq;
     question.answer = [NSNumber numberWithDouble:res];
+    question.number = [NSNumber numberWithInteger:(total + 1)];
     
     [quiz addQuestionsObject:question];
     
     QuestionCount.text = [NSString stringWithFormat:@"%i/%i", total+1, numOfQuestions];
     
-    if (res - (int) res != 0.000) {
-        FloatWarning.hidden = NO;
-    } else {
-        FloatWarning.hidden = YES;
-    }
+
 }
 
 - (void) endQuiz {
     // record score
+    [timer invalidate];
     quiz.score = [NSNumber numberWithInt:((100 * correct)/numOfQuestions)];
     [context save:nil];
     
     if (type == 1 && [quiz.score intValue] >= 70) {
         int curLvl = [[NSUserDefaults standardUserDefaults] integerForKey:@"CurrentPlayerLevel"];
-        [[NSUserDefaults standardUserDefaults] setInteger:(curLvl+1) forKey:@"CurrentPlayerLevel"];
+        
+        if (curLvl == difficulty)
+            [[NSUserDefaults standardUserDefaults] setInteger:(curLvl+1) forKey:@"CurrentPlayerLevel"];
     }
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quiz Completed" message:[NSString stringWithFormat:@"Correct: %i/%i", correct, total] delegate:self cancelButtonTitle:@"Accept" otherButtonTitles:nil, nil];
-    alert.tag = 1;
-    [alert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView.tag == 1) {
-        [MathSolver instance].returnToMain = YES;
-        [self dismissViewControllerAnimated:NO completion:nil];
-    }
+    [self performSegueWithIdentifier:@"ViewResultsSegue" sender:self];
 }
 
 - (IBAction)QuitQuiz:(UIButton *)sender {
-    
-    
+    [timer invalidate];
+    [context reset];
+    [[MathSolver instance] playSound];
     [MathSolver instance].returnToMain = YES;
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [[MathSolver instance] playSound];
     if ([[segue identifier] isEqualToString:@"ScratchPadSegue"]) {
-        
         DrawingViewController *dest = [segue destinationViewController] ;
         
         dest.eq = Equation.text;
+    } else if ([[segue identifier] isEqualToString:@"ViewResultsSegue"]) {
+        QuizResultViewController *dest = [segue destinationViewController];
+        
+        dest.quiz = quiz;
     }
+}
+
+- (void) timeCount {
+    seconds += 1;
+    int hour = seconds/3600;
+    int minute = (seconds - 3600 * hour)/60;
+    int second = (seconds - 3600 * hour - minute * 60);
+    
+    TimeLabel.text = [NSString stringWithFormat:@"%02i:%02i", minute, second];
 }
 
 - (void)viewDidUnload {
     [self setSolution:nil];
     [self setLevel:nil];
     [self setQuestionCount:nil];
+    timer = nil;
     [super viewDidUnload];
 }
 @end

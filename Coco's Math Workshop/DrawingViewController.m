@@ -24,6 +24,10 @@
     return self;
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -73,7 +77,7 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
+    [[MathSolver instance] playSound];
     if(!mouseSwiped) {
         UIGraphicsBeginImageContext(self.view.frame.size);
         [tempDrawImage.image drawInRect:CGRectMake(0, 0, tempDrawImage.frame.size.width, tempDrawImage.frame.size.height)];
@@ -97,11 +101,17 @@
 }
 
 - (IBAction)ClearImage:(UIButton *)sender {
+    [[MathSolver instance] playSound];
     tempDrawImage.image = nil;
     mainImage.image = nil;
 }
 
 - (IBAction)GoBack:(UIButton *)sender {
+    [[MathSolver instance] playSound];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [[MathSolver instance] playSound];
 }
 @end

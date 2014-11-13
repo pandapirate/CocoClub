@@ -16,6 +16,10 @@ extern NSString * const NOTIF_LoggingOut_Settings;
 
 @property (strong, nonatomic) IBOutlet UILabel *DifficultyLabel;
 @property (strong, nonatomic) IBOutlet UILabel *NumberLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *PlusCross;
+@property (strong, nonatomic) IBOutlet UIImageView *MinusCross;
+@property (strong, nonatomic) IBOutlet UIImageView *MultiCross;
+@property (strong, nonatomic) IBOutlet UIImageView *DivCross;
 
 @property (strong, nonatomic) NSMutableArray *operations;
 

@@ -1,8 +1,8 @@
 //
 //  Question.m
-//  Coco's Math Workshop
+//  Coco's Class
 //
-//  Created by Kevin Huang on 10/5/13.
+//  Created by Kevin Huang on 10/12/13.
 //  Copyright (c) 2013 The Company. All rights reserved.
 //
 
@@ -13,7 +13,9 @@
 
 @dynamic answer;
 @dynamic correct;
-@dynamic userans;
 @dynamic equation;
+@dynamic number;
+@dynamic userans;
+@dynamic time;
 
 @end

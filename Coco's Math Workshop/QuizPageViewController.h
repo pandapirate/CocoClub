@@ -10,13 +10,15 @@
 
 @interface QuizPageViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *Result;
 @property (strong, nonatomic) IBOutlet UILabel *Equation;
 @property (strong, nonatomic) IBOutlet UILabel *Solution;
 @property (strong, nonatomic) IBOutlet UILabel *Level;
 @property (strong, nonatomic) IBOutlet UILabel *QuestionCount;
 @property (strong, nonatomic) IBOutlet UIButton *EnterButton;
-@property (strong, nonatomic) IBOutlet UILabel *FloatWarning;
+@property (strong, nonatomic) IBOutlet UILabel *TimeLabel;
+
+@property (nonatomic, retain) NSTimer *timer;
+
 @property int difficulty;
 @property int numOfQuestions;
 @property int type;

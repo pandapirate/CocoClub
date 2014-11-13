@@ -24,13 +24,17 @@
     return self;
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     ComparisonTable.delegate = self;
     ComparisonTable.dataSource = self;
-    
+    ComparisonTable.backgroundColor = [UIColor clearColor];
     [self loadResults];
     
 	// Do any additional setup after loading the view.
@@ -60,19 +64,34 @@
     cell.question = [results objectAtIndex:indexPath.row];
     [cell setLabels];
     
+    UIView *blank = [[UIView alloc] init];
+    blank.backgroundColor = [UIColor clearColor];
+    cell.selectedBackgroundView = blank;
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
 - (void) loadResults {
-    results = [[NSMutableArray alloc] init];
+    NSLog(@"Total: %@", quiz.number);
+    results = [[NSMutableArray alloc] initWithCapacity:[quiz.number intValue]];
+
     for (Question *q in quiz.questions) {
         [results addObject:q];
+    }
+    
+    for (Question *q in quiz.questions) {
+        [results replaceObjectAtIndex:([q.number intValue]-1) withObject:q];
     }
     
     [ComparisonTable reloadData];
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [[MathSolver instance] playSound];
+}
+
 - (IBAction)BackButton:(UIButton *)sender {
+    [[MathSolver instance] playSound];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
